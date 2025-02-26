@@ -6144,10 +6144,15 @@ react@^18.2.0:
   dependencies:
     loose-envify "^1.1.0"
 
-react_ujs@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/react_ujs/-/react_ujs-3.1.1.tgz#7c4a990280014d5f42a04bd6380ec7d85db7a7bb"
-  integrity sha512-BCNm1DFaXl9XU50UDWYAWW3HpKwkWqWaSVxW/Mg6NGhQUvs7XdxFPd08ZSSF8+OjHXqQ1lJPKtIefcQDqbnA3Q==
+react_ujs@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/react_ujs/-/react_ujs-2.7.1.tgz#d87cbcb82593fe59d30fc5dbc51800d1571001a8"
+  integrity sha512-nQ/y/Vn2hZQXjNxFKY4pV5hAQbG3o/8yaRzq3nJAAdk7tMgey/EsMKoDOWlEQxZ+D3J4BtwquW1oCESMiHSHnQ==
+
+react_ujs@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/react_ujs/-/react_ujs-3.2.1.tgz#8ea0d25f2abefa7a208645f44e5dea1ccaf3c6cf"
+  integrity sha512-Cm3wpkIHUcQau8j/X4CHf1ZchgqpaL9GhVupX0YFwSOmDdMhLJdHRiXw9yBYpqdsvtBaVcCX2D+K42N5jMl3Cw==
   dependencies:
     "@babel/preset-react" "^7.22.5"
     css-loader "^6.8.1"
@@ -6158,11 +6163,6 @@ react_ujs@3.1.1:
     react-dom "^18.2.0"
     react_ujs "^2.7.1"
     style-loader "^3.3.3"
-
-react_ujs@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/react_ujs/-/react_ujs-2.7.1.tgz#d87cbcb82593fe59d30fc5dbc51800d1571001a8"
-  integrity sha512-nQ/y/Vn2hZQXjNxFKY4pV5hAQbG3o/8yaRzq3nJAAdk7tMgey/EsMKoDOWlEQxZ+D3J4BtwquW1oCESMiHSHnQ==
 
 read-cache@^1.0.0:
   version "1.0.0"
