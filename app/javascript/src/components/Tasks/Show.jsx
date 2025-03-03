@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 
 import { useHistory, useParams } from "react-router-dom";
@@ -8,9 +7,7 @@ import { Button, Container, PageLoader } from "components/commons";
 
 const Show = () => {
   const [task, setTask] = useState([]);
-  const [assignedUser, setAssignedUser] = useState([]);
   const [pageLoading, setPageLoading] = useState(true);
-
   const { slug } = useParams();
 
   const history = useHistory();
@@ -22,10 +19,9 @@ const Show = () => {
   const fetchTaskDetails = async () => {
     try {
       const {
-        data: { task, assigned_user },
+        data: { task },
       } = await tasksApi.show(slug);
       setTask(task);
-      setAssignedUser(assigned_user);
       setPageLoading(false);
     } catch (error) {
       logger.error(error);
@@ -50,17 +46,19 @@ const Show = () => {
             <div className="flex items-center gap-x-6">
               <p className="text-base text-gray-700">
                 <span className="font-semibold">Assigned to: </span>
-                {assignedUser?.name}
+                {task?.assigned_user?.name}
               </p>
             </div>
           </div>
-          <Button
-            buttonText="Edit"
-            icon="edit-line"
-            size="small"
-            style="secondary"
-            onClick={updateTask}
-          />
+          <div className="flex items-center justify-end gap-x-3">
+            <Button
+              buttonText="Edit"
+              icon="edit-line"
+              size="small"
+              style="secondary"
+              onClick={updateTask}
+            />
+          </div>
         </div>
       </div>
     </Container>

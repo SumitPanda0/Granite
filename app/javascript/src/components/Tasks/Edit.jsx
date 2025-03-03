@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
@@ -52,8 +51,8 @@ const Edit = ({ history }) => {
         },
       } = await tasksApi.show(slug);
       setTitle(title);
-      setAssignedUser(assigned_user ?? {});
-      setUserId(assigned_user?.id);
+      setAssignedUser(assigned_user);
+      setUserId(assigned_user.id);
     } catch (error) {
       logger.error(error);
     }
