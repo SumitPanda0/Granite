@@ -31,20 +31,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def handle_database_level_exception(exception)
-    handle_generic_exception(exception, :unprocessable_entity)
-  end
-
-  def handle_authorization_error
-    render_error("Access denied. You are not authorized to perform this action.", :forbidden)
-  end
-
-  def handle_generic_exception(exception, status = :internal_server_error)
-    log_exception(exception) unless Rails.env.test?
-    error = Rails.env.production? ? t("generic_error") : exception
-    render_error(error, status)
-  end
-
   def log_exception(exception)
     Rails.logger.info exception.class.to_s
     Rails.logger.info exception.to_s
@@ -69,17 +55,33 @@ class ApplicationController < ActionController::Base
     render status:, json:
   end
 
-  def authenticate_user_using_x_auth_token
-    user_email = request.headers["X-Auth-Email"].presence
-    auth_token = request.headers["X-Auth-Token"].presence
-    user = user_email && User.find_by!(email: user_email)
-    is_valid_token = user && auth_token && ActiveSupport::SecurityUtils.secure_compare(
-      user.authentication_token,
-      auth_token)
-    if is_valid_token
-      @current_user = user
-    else
-      render_error(t("session.could_not_auth"), :unauthorized)
+  private
+
+    def handle_database_level_exception(exception)
+      handle_generic_exception(exception, :unprocessable_entity)
     end
-  end
+
+    def handle_authorization_error
+      render_error("Access denied. You are not authorized to perform this action.", :forbidden)
+    end
+
+    def handle_generic_exception(exception, status = :internal_server_error)
+      log_exception(exception) unless Rails.env.test?
+      error = Rails.env.production? ? t("generic_error") : exception
+      render_error(error, status)
+    end
+
+    def authenticate_user_using_x_auth_token
+      user_email = request.headers["X-Auth-Email"].presence
+      auth_token = request.headers["X-Auth-Token"].presence
+      user = user_email && User.find_by!(email: user_email)
+      is_valid_token = user && auth_token && ActiveSupport::SecurityUtils.secure_compare(
+        user.authentication_token,
+        auth_token)
+      if is_valid_token
+        @current_user = user
+      else
+        render_error(t("session.could_not_auth"), :unauthorized)
+      end
+    end
 end

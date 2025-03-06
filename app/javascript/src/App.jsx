@@ -18,10 +18,9 @@ const App = () => {
     <Router>
       <ToastContainer />
       <Switch>
-        <Route exact component={EditTask} path="/tasks/:slug/edit" />
         <Route exact component={ShowTask} path="/tasks/:slug/show" />
+        <Route exact component={EditTask} path="/tasks/:slug/edit" />
         <Route exact component={CreateTask} path="/tasks/create" />
-        {/* <Route exact component={Dashboard} path="/dashboard" /> */}
         <Route exact component={Signup} path="/signup" />
         <Route exact component={Login} path="/login" />
         <PrivateRoute
