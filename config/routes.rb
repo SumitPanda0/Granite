@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   constraints(lambda { |req| req.format == :json }) do
     resources :tasks, except: %i[new edit], param: :slug
-    resources :users, only: :index
+    resources :users, only: %i[index create]
   end
 
   root "home#index"
