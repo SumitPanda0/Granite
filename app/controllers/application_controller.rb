@@ -31,6 +31,20 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def handle_database_level_exception(exception)
+    handle_generic_exception(exception, :unprocessable_entity)
+  end
+
+  def handle_authorization_error
+    render_error("Access denied. You are not authorized to perform this action.", :forbidden)
+  end
+
+  def handle_generic_exception(exception, status = :internal_server_error)
+    log_exception(exception) unless Rails.env.test?
+    error = Rails.env.production? ? t("generic_error") : exception
+    render_error(error, status)
+  end
+
   def log_exception(exception)
     Rails.logger.info exception.class.to_s
     Rails.logger.info exception.to_s
@@ -57,20 +71,6 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def handle_database_level_exception(exception)
-      handle_generic_exception(exception, :unprocessable_entity)
-    end
-
-    def handle_authorization_error
-      render_error("Access denied. You are not authorized to perform this action.", :forbidden)
-    end
-
-    def handle_generic_exception(exception, status = :internal_server_error)
-      log_exception(exception) unless Rails.env.test?
-      error = Rails.env.production? ? t("generic_error") : exception
-      render_error(error, status)
-    end
-
     def authenticate_user_using_x_auth_token
       user_email = request.headers["X-Auth-Email"].presence
       auth_token = request.headers["X-Auth-Token"].presence
@@ -83,5 +83,9 @@ class ApplicationController < ActionController::Base
       else
         render_error(t("session.could_not_auth"), :unauthorized)
       end
+    end
+
+    def current_user
+      @current_user
     end
 end
