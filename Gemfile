@@ -36,6 +36,8 @@ gem "bootsnap", require: false
 
 gem "responders"
 
+gem "simplecov", require: false, group: :test
+
 # For compiling and bundling JavaScript. Read more: https://github.com/shakacode/shakapacker
 gem "shakapacker", "~> 6.6.0"
 
