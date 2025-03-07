@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+  before_save :to_lowercase
   skip_before_action :authenticate_user_using_x_auth_token, only: :create
   def create
     @user = User.find_by!(email: login_params[:email].downcase)
@@ -11,12 +12,15 @@ class SessionsController < ApplicationController
 
   def destroy
     @current_user = nil
-    # any other session cleanup tasks can be done here...
   end
 
   private
 
     def login_params
       params.require(:login).permit(:email, :password)
+    end
+
+    def to_lowercase
+      email.downcase!
     end
 end
