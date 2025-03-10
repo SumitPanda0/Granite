@@ -6,8 +6,8 @@ class TasksController < ApplicationController
   before_action :load_task!, only: %i[show update destroy]
 
   def index
-    tasks = Task.all.as_json(include: { assigned_user: { only: %i[name id] } })
-    tasks = TaskPolicy::Scope.new(current_user, Task).resolve
+    task_records = policy_scope(Task)
+    tasks = task_records.as_json(include: { assigned_user: { only: %i[name id] } })
     render_json({ tasks: })
   end
 
@@ -20,6 +20,7 @@ class TasksController < ApplicationController
 
   def show
     authorize @task
+    @comments = @task.comments.order("created_at DESC")
   end
 
   def update
