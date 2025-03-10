@@ -35,10 +35,6 @@ class ApplicationController < ActionController::Base
     handle_generic_exception(exception, :unprocessable_entity)
   end
 
-  def handle_authorization_error
-    render_error("Access denied. You are not authorized to perform this action.", :forbidden)
-  end
-
   def handle_generic_exception(exception, status = :internal_server_error)
     log_exception(exception) unless Rails.env.test?
     error = Rails.env.production? ? t("generic_error") : exception
@@ -69,6 +65,9 @@ class ApplicationController < ActionController::Base
     render status:, json:
   end
 
+  include Pundit::Authorization
+  rescue_from Pundit::NotAuthorizedError, with: :handle_authorization_error
+
   private
 
     def authenticate_user_using_x_auth_token
@@ -83,6 +82,10 @@ class ApplicationController < ActionController::Base
       else
         render_error(t("session.could_not_auth"), :unauthorized)
       end
+    end
+
+    def handle_authorization_error
+      render_error(t("authorization.denied"), :forbidden)
     end
 
     def current_user
