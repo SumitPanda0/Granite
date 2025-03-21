@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "granite-454312",
+  "private_key_id": "6f37084b5a575223d928b96e1fa36e92f9d897fa",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCan+Vz87z4GMty\nWa0e7TTwTbjB4kvOg3r8Pc0NVmcIwew+ubrUgaxaQLEPNG0myiQ69LDvW+3UEM1a\nwkAuZHUAXySNYD2ukjULpt3kYQcENmCTmK5UK5HE1Z63Ql+B7y2menDzKYkIX+l1\nSSnKKTi8ETqY9QeXGKcjkPgElCfMwpB+yA/7V4m6V0mAxq4o75+FFQL1XVtxN518\nlB3SX4mS8E0FMWAEgBd6C/sPjGskFdFmRjMKwAh7C8M/eAd5Yindkcp3lM3a26hb\nu82gBWbpYkxs+aY2AY6g3heUXLRuTvV5njpWI+nnzegy0OJY2J7F4g+QdaThQ0Ni\nmNmigdQrAgMBAAECggEAF3rwfQsmRwZ83oB/qZKb12H2DHswx8tvgZ5g5QWZ39qS\n5XOOy3Zllc79FDIB4UIQ/mLp+28aTnm+tWmKFYFrwwKvqkhTFY9ePsa4K1YQmrMn\nN0KYNm/nUtydnXaWykRnykANpt9Hz93Ate7GScy4sNZs741F+cvklaIOB6P35z/n\n+dz6orFp6HRSySynl7nYXsqumPvu5n/557dcsq0CFv5BsHQE8lhwE9Q2cla46Cnk\njIk35A1rHOJ/5dMq9ywqSlw97qwcAshSqei8SsWN4Pia6zzSwGcCY7uVW0uifJZI\n3oWmVzksUnxhgztEdn23fRUZQoOHBtcad35NJ5z7AQKBgQDOc272v6HjPJptI74K\n6KvpzCMQ8iOocLeRXRc1QhMlGcJIucnsmvDW+8JS3SyREPsfeHPSd120YkaGOP5m\ne+xLecu2OTVyQockqZGcAcrjtShMzXft0I4zSV57fp0e0TY5PVUxW0tii9PnGX/+\nnZd+Raw8t5sHzxHdmwutazaZRwKBgQC/vDK00TaPmcU2+XJklDBdAvM/S2RM3l5J\nqVVInTgaSW2Wb+MyODzf3nxtlaMPm6zjkHOZ2tyWgcidHq3g7gx3vVRFWhnwM8tR\n1oB3FYm5XTeighXwcSKdvZ8RNQCroJM+lM/oIl6cdhfySsmx4rWnoaK6Xkl+WQg0\n1o3gVX1f/QKBgCuGiLl6822OJFyoMXPpU/1JrYbwFfZ4NStvfeobkR+8S4q7qMe6\nbtZUY8bGnJPFCby7z2drBRV3triroW8H52yONBWqAAuj3Qwst+c1NYpGckWm+Abq\ndmB3snTE3+lUYGM2/BQY1E7lffp2FNcgcIUNuV9fsk62KGUZQCACv5MXAoGBAL2/\nqIbdzZtL2KrRLu5u4XYLJ2PqXrbcEn/fvvD/9re9F2EcFcJreYMsEgP5ZMhbjjwf\nhugqesfQZRNpezbxHxGZIz8HLkhTWdIB8FzpycTShe6jwsaTkGh/cl57D9DKNy5l\n42OeL/ezv3sfnIAZFyFwizTZfu41ejOgagQrVsqZAoGAL4KVtmfbu9HZLNJsFK/u\n+dQHV09CSJj8esms1Y2/p/bRMOTbfAKHNE0YoVFfbhUAnChWm1qe5GnAT76tFYBH\ngh4mHd+GXHRzgBA68TdPHrn67p8SsUtlVhiiXYqfcVDynIbk8Q/UmMmYiJlLUiIv\ngdZQIBy6LYxyzaCr5x3wa3k=\n-----END PRIVATE KEY-----\n",
+  "client_email": "granite-sumit-panda@granite-454312.iam.gserviceaccount.com",
+  "client_id": "103592740639405606971",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/granite-sumit-panda%40granite-454312.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -3,9 +3,13 @@
 require "test_helper"
 
 class ReportDownloadChannelTest < ActionCable::Channel::TestCase
+  include ActionCable::TestHelper
+
   def setup
     @user = create(:user)
     @pubsub_token = @user.id
+
+    stub_connection current_user: @user
   end
 
   def test_subscribed

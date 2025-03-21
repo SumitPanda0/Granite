@@ -51,6 +51,7 @@ const DownloadReport = () => {
     if (progress === 100) {
       setIsLoading(false);
       setMessage("Report is ready to be downloaded");
+      setProgress(100);
     }
   }, [progress]);
 
