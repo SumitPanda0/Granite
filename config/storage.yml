@@ -9,5 +9,5 @@ local:
 google:
   service: GCS
   project: <%= Rails.application.secrets.gcs[:project] %>
-  credentials: <%= Rails.root.join("config/granite-454312-6f37084b5a57.json") %>
+  credentials: <%= Rails.root.join(Rails.application.credentials.dig(:gcs, :credentials_path)) %>
   bucket: <%= 'granite-report-01' %>

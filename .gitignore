@@ -36,6 +36,9 @@ test/fixtures
 # Ignore environment variables
 /.env.development.local
 
+# Ignore credentials
+/config/granite-454312-6f37084b5a57.json
+
 #---------------------------------------#
 # IDEs & Editors Ignores                #
 #---------------------------------------#
