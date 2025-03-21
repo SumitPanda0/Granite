@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-:verbose: true
 development:
   :concurrency: 1
 production:
@@ -8,4 +7,3 @@ production:
 :queues:
   - default
   - mailers
-  
